@@ -6,7 +6,7 @@ function useAxios() {
     const dispatch = useDispatch();
 
     const ax = axios.create({
-        baseURL: "http://jeto-api.jlmelgarejo.tech"
+        baseURL: process.env.REACT_APP_JETO_API
     })
 
     function showLoading() {
