@@ -11,6 +11,7 @@ function App() {
     const dispatch = useDispatch();
 
     async function compressImage(file) {
+        await jetoApi.check();
 
         if (file.type.includes("pdf")) return file;
 
@@ -24,10 +25,6 @@ function App() {
         } catch (error) {
             console.log(error);
         }
-    }
-
-    async function checkApi() {
-        await jetoApi.check();
     }
 
     async function sendFile({target}) {
@@ -54,7 +51,7 @@ function App() {
                         Serviço desenvolvido em Java que tem como objetivo extrair texto de imagens e arquivos pdf
                     </h3>
                 </nav>
-                <FileInput onCreate={checkApi} sendMethod={sendFile}/>
+                <FileInput sendMethod={sendFile}/>
                 <h6>
                     Não é realizado o armazenamento dos arquivos :)
                 </h6>

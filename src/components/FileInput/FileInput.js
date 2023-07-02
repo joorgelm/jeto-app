@@ -1,8 +1,6 @@
 import Form from 'react-bootstrap/Form';
 
-function FileInput({sendMethod: send, onCreate: createMethod}) {
-
-    createMethod()
+function FileInput({sendMethod: send}) {
 
     return (
         <div className="file-input">
