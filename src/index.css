@@ -19,16 +19,30 @@ h3 {
     --bs-tooltip-bg: var(--bs-primary);
 }
 
+.file-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+}
+
+.file-input div {
+    margin-inline: 1em;
+}
+
 .result {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
+
 
 .toast {
     max-height: 30vh;
-    --bs-toast-max-width: 50%;
+    --bs-toast-max-width: 85vw;
     overflow: auto;
 }
 
@@ -59,7 +73,7 @@ h3 {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    position: fixed;
+    position: inherit;
     left: 0;
     bottom: 1em;
     width: 100%;

@@ -1,5 +1,4 @@
 import Form from 'react-bootstrap/Form';
-import "./FileInput.css"
 
 function FileInput({sendMethod: send}) {
     return (

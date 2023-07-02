@@ -17,8 +17,9 @@ function useAxios() {
         dispatch({type: "HIDE_LOADING"});
     }
 
-    function setErr({data}) {
-        dispatch({type: "SET_CONTENT", content: data});
+    function setErr(data) {
+        console.log(data)
+        dispatch({type: "SET_CONTENT", content: ""});
     }
 
     ax.interceptors.request.use((config) => {
@@ -32,8 +33,8 @@ function useAxios() {
         return res;
     }, err => {
         hideLoading();
-        setErr(err.response)
-        return err;
+        setErr(err)
+        return {data: err};
     })
 
     return ax;
