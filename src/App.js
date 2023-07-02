@@ -27,9 +27,10 @@ function App() {
     }
 
     async function sendFile({target}) {
+        dispatch({type: "SHOW_LOADING"});
         const [file,] = target.files;
 
-        const compressed = await compressImage(file);
+        const compressed = new File([await compressImage(file)], file.name);
 
         const {data} = await jetoApi.extract(compressed, file.name);
 
