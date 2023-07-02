@@ -26,6 +26,10 @@ function App() {
         }
     }
 
+    async function checkApi() {
+        await jetoApi.check();
+    }
+
     async function sendFile({target}) {
         dispatch({type: "SHOW_LOADING"});
         const [file,] = target.files;
@@ -50,7 +54,7 @@ function App() {
                         Serviço desenvolvido em Java que tem como objetivo extrair texto de imagens e arquivos pdf
                     </h3>
                 </nav>
-                <FileInput sendMethod={sendFile}/>
+                <FileInput onClick={checkApi} sendMethod={sendFile}/>
                 <h6>
                     Não é realizado o armazenamento dos arquivos :)
                 </h6>

@@ -5,6 +5,10 @@ function useJeto() {
     const axiosInstance = useAxios();
 
     return {
+        check() {
+            return axiosInstance.get("v1/jeto");
+        },
+
         extract(file, fileName) {
             const formData = new FormData();
 
