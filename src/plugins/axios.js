@@ -6,7 +6,7 @@ function useAxios() {
     const dispatch = useDispatch();
 
     const ax = axios.create({
-        baseURL: process.env.REACT_APP_JETO_API
+        baseURL: "https://jeto-api-cont.nicerock-ce78af27.brazilsouth.azurecontainerapps.io"
     })
 
     function showLoading() {
