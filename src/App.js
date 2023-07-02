@@ -12,6 +12,7 @@ function App() {
 
     async function compressImage(file) {
         await jetoApi.check();
+        dispatch({type: "SHOW_LOADING"});
 
         if (file.type.includes("pdf")) return file;
 
@@ -28,7 +29,6 @@ function App() {
     }
 
     async function sendFile({target}) {
-        dispatch({type: "SHOW_LOADING"});
         const [file,] = target.files;
 
         const compressed = new File([await compressImage(file)], file.name);
