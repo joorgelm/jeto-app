@@ -54,7 +54,7 @@ function App() {
                         Serviço desenvolvido em Java que tem como objetivo extrair texto de imagens e arquivos pdf
                     </h3>
                 </nav>
-                <FileInput onClick={checkApi} sendMethod={sendFile}/>
+                <FileInput onCreate={checkApi} sendMethod={sendFile}/>
                 <h6>
                     Não é realizado o armazenamento dos arquivos :)
                 </h6>
