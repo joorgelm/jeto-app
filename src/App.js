@@ -35,10 +35,15 @@ function App() {
 
         const {data} = await jetoApi.extract(compressed, file.name);
 
+        const analysisResult = await jetoApi.analyze(data)
+
         dispatch({type: "SET_CONTENT", content: data});
+        dispatch({type: "SET_ANALYSIS", analysis: analysisResult.data.content});
     }
 
     const content = useSelector(state => state.content)
+
+    const contentAnalisys = useSelector(state => state.analysis)
 
     return (
         <div className="App">
@@ -57,6 +62,11 @@ function App() {
                 </h6>
                 <Result
                     content={content ?? ""}
+                />
+
+                <Result
+                    header="Processamento de texto avançado para identificar automaticamente nomes próprios"
+                    content={contentAnalisys ?? ""}
                 />
                 <ProgressLoad/>
                 <Footer/>
