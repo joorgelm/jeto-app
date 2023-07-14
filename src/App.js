@@ -6,6 +6,14 @@ import useJeto from "./endpoints/jeto";
 import {useDispatch, useSelector} from "react-redux";
 import imageCompression from "browser-image-compression";
 
+import gif from "./assets/jeto.gif"
+
+function jetoGif(content) {
+
+    if (!content) return <img className="jeto-gif" src={gif} alt="jeto"/>
+    return <></>
+}
+
 function App() {
     const jetoApi = useJeto();
     const dispatch = useDispatch();
@@ -69,6 +77,9 @@ function App() {
                     content={contentAnalisys ?? ""}
                 />
                 <ProgressLoad/>
+
+                {jetoGif(contentAnalisys)}
+
                 <Footer/>
             </div>
         </div>

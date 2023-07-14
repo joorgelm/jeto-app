@@ -93,6 +93,11 @@ h3 {
     font-style: normal;
 }
 
+.jeto-gif {
+    width: 50%;
+    margin-bottom: 5vh;
+}
+
 .App {
     font-family: Space Mono, monospace;
     text-align: center;
